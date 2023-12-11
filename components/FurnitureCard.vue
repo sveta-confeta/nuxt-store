@@ -11,7 +11,7 @@
 <script setup>
 defineProps({
   product: {
-    type:Object ,
+    type:Object,
     required: true,
   }
 });

@@ -35,22 +35,22 @@
           </span>
         </div>
       </div>
-<!--      <MyButton type="button" color="primary"  @click="cartStore.addToCart(product, quantity)">-->
-<!--        Add To Cart-->
-<!--      </MyButton>-->
+      <MyButton type="button" color="primary"  @click="cartStore.addToCart(product, quantity)">
+        Add To Cart
+      </MyButton>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-// import { useCartStore } from "@/store/cart.js";
-// const cartStore = useCartStore()
+import {useCartStore} from "../store/cartStore.ts";
+const cartStore = useCartStore();
+
 
 const props = defineProps({
   product: {
-    type: Object,
-    default: () => {},
+    type:Object,
     required: true,
   },
 });

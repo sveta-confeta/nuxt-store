@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <Header />
     <div>
     <slot/>
     </div>
@@ -9,7 +9,7 @@
 
 </template>
 
-<script>
+<script setup>
 </script>
 
 <style scoped>

@@ -10,17 +10,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useRoute} from 'vue-router';
+
 const route = useRoute();
 import api from "./../../server/api/api";
-const productId = ref("");
+const productId = ref(0);
 const product = ref({});
 
 onMounted(async () => {
-  productId.value = route.params.id;
+  productId.value = route.params.id as number;
   product.value = await api.getProduct(productId.value);
-  debugger
-  if(!product) {
+  if(!product.value) {
   throw createError({ statusCode:404, statusMessage: 'Product not found'})
 }
 });

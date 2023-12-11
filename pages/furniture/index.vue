@@ -16,6 +16,8 @@ import { onMounted, ref } from "vue";
 import api from "./../../server/api/api";
 
 
+
+
 const popularProducts = ref([]);
 const loading = ref(true);
 
